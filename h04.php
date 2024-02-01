@@ -22,8 +22,8 @@
         <div class="col">
             <form action="h04.php" method="get">
                 <h3>jagamine</h3>
-                Arv 1 <input type="text" name="arv1" required><br>
-                Arv 2 <input type="text" name="arv2" required><br>
+                Arv 1 <input type="text" name="arv1" required pattern="-?\d*\.?\d+"><br>
+                Arv 2 <input type="text" name="arv2" required pattern="-?\d*\.?\d+"><br>
                 <input type="submit" value="Arvuta">
                 <div class="alert alert-danger" role="alert">Palun täitke mõlemad lahtrid!</div>
             </form>
@@ -48,8 +48,8 @@
             <div class="col">
             <form action="h04.php" method="get">
                 <h3>vanus</h3>
-                Vanus 1 <input type="text" name="van1" required><br>
-                Vanus 2 <input type="text" name="van2" required><br>
+                Vanus 1 <input type="text" name="van1" required pattern="-?\d*\.?\d+"><br>
+                Vanus 2 <input type="text" name="van2" required pattern="-?\d*\.?\d+"><br>
                 <input type="submit" value="Arvuta">
                 <div class="alert alert-danger" role="alert">Palun täitke mõlemad lahtrid!</div>
             </form>
@@ -70,8 +70,8 @@
             <div class="col">
             <form action="h04.php" method="get">
                 <h3>Ristkülik või ruut</h3>
-                Külg 1 <input type="text" name="kulg1" required><br>
-                Külg 2 <input type="text" name="kulg2" required><br>
+                Külg 1 <input type="text" name="kulg1" required pattern="-?\d*\.?\d+"><br>
+                Külg 2 <input type="text" name="kulg2" required pattern="-?\d*\.?\d+"><br>
                 <input type="submit" value="Arvuta">
                 <div class="alert alert-danger" role="alert">Palun täitke mõlemad lahtrid!</div>
             </form>
@@ -90,8 +90,8 @@
             <div class="col">
             <form action="h04.php" method="get">
                 <h3>Ristkülik või ruut II</h3>
-                Arv 1 <input type="text" name="arv1" required><br>
-                Arv 2 <input type="text" name="arv2" required><br>
+                Arv 1 <input type="text" name="arv1" required pattern="-?\d*\.?\d+"><br>
+                Arv 2 <input type="text" name="arv2" required pattern="-?\d*\.?\d+"><br>
                 <input type="submit" value="Arvuta">
                 <div class="alert alert-danger" role="alert">Palun täitke mõlemad lahtrid!</div>
             </form>
@@ -101,7 +101,7 @@
             <div class="col">
             <form action="h04.php" method="get">
                 <h3>Juubel</h3>
-                Sünniaasta <input type="text" name="aa1" required><br>
+                Sünniaasta <input type="text" name="aa1" required pattern="-?\d*\.?\d+"><br>
                 <input type="submit" value="Arvuta">
             </form>
             <?php
@@ -119,7 +119,7 @@
             <div class="col">
             <form action="h04.php" method="get">
                 <h3>Hinne</h3>
-                Punkitde arv <input type="text" name="punktid" required><br>
+                Punkitde arv <input type="text" name="punktid" required pattern="-?\d*\.?\d+"><br>
                 <input type="submit" value="Arvuta">
             </form>
             <?php
