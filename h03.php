@@ -11,10 +11,10 @@
     <div class="container">
     <h1>Harjutused</h1>
     <form action="h03.php" method="get">
-        Trapetsi 1. alus <input type="text" name="t1"><br>
-        Trapetsi 2. alus <input type="text" name="t2"><br>
-        Trapetsi kõrgus <input type="text" name="t3"><br>
-        Rombi külg <input type="text" name="t4"><br>
+        Trapetsi 1. alus <input type="text" name="t1" required pattern="-?\d*\.?\d+"><br>
+        Trapetsi 2. alus <input type="text" name="t2" required pattern="-?\d*\.?\d+"><br>
+        Trapetsi kõrgus <input type="text" name="t3" required pattern="-?\d*\.?\d+"><br>
+        Rombi külg <input type="text" name="t4" required pattern="-?\d*\.?\d+"><br>
         <input type="submit" value="Arvuta">
     </form>
     <?php
