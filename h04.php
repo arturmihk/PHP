@@ -22,8 +22,8 @@
         <div class="col">
             <form action="h04.php" method="get">
                 <h3>jagamine</h3>
-                Arv 1 <input type="text" name="arv1"><br>
-                Arv 2 <input type="text" name="arv2"><br>
+                Arv 1 <input type="text" name="arv1" required><br>
+                Arv 2 <input type="text" name="arv2" required><br>
                 <input type="submit" value="Arvuta">
                 <div class="alert alert-danger" role="alert">Palun täitke mõlemad lahtrid!</div>
             </form>
@@ -48,8 +48,8 @@
             <div class="col">
             <form action="h04.php" method="get">
                 <h3>vanus</h3>
-                Vanus 1 <input type="text" name="van1"><br>
-                Vanus 2 <input type="text" name="van2"><br>
+                Vanus 1 <input type="text" name="van1" required><br>
+                Vanus 2 <input type="text" name="van2" required><br>
                 <input type="submit" value="Arvuta">
                 <div class="alert alert-danger" role="alert">Palun täitke mõlemad lahtrid!</div>
             </form>
@@ -70,8 +70,8 @@
             <div class="col">
             <form action="h04.php" method="get">
                 <h3>Ristkülik või ruut</h3>
-                Külg 1 <input type="text" name="kulg1"><br>
-                Külg 2 <input type="text" name="kulg2"><br>
+                Külg 1 <input type="text" name="kulg1" required><br>
+                Külg 2 <input type="text" name="kulg2" required><br>
                 <input type="submit" value="Arvuta">
                 <div class="alert alert-danger" role="alert">Palun täitke mõlemad lahtrid!</div>
             </form>
@@ -85,35 +85,62 @@
                 echo "Ristkülik";
             }
         }
-        ?>    
+        ?>
             </div>
             <div class="col">
             <form action="h04.php" method="get">
                 <h3>Ristkülik või ruut II</h3>
-                Arv 1 <input type="text" name="arv1"><br>
-                Arv 2 <input type="text" name="arv2"><br>
+                Arv 1 <input type="text" name="arv1" required><br>
+                Arv 2 <input type="text" name="arv2" required><br>
                 <input type="submit" value="Arvuta">
                 <div class="alert alert-danger" role="alert">Palun täitke mõlemad lahtrid!</div>
             </form>
+            <?php
+            ?>
             </div>
             <div class="col">
             <form action="h04.php" method="get">
                 <h3>Juubel</h3>
-                Arv 1 <input type="text" name="arv1"><br>
-                Arv 2 <input type="text" name="arv2"><br>
+                Sünniaasta <input type="text" name="aa1" required><br>
                 <input type="submit" value="Arvuta">
-                <div class="alert alert-danger" role="alert">Palun täitke mõlemad lahtrid!</div>
             </form>
+            <?php
+            if (isset($_GET['aa1']) && $_GET['aa1'] !== '') {
+                $aa1 = $_GET['aa1'];
+                $currentYear = date("Y");
+                if (($currentYear - $aa1) % 10 == 0) {
+                    echo "Juubli aasta";
+                } else {
+                    echo "Ei ole juubli aasta";
+                }
+            }
+            ?>
             </div>
             <div class="col">
             <form action="h04.php" method="get">
                 <h3>Hinne</h3>
-                Arv 1 <input type="text" name="arv1"><br>
-                Arv 2 <input type="text" name="arv2"><br>
+                Punkitde arv <input type="text" name="punktid" required><br>
                 <input type="submit" value="Arvuta">
-                <div class="alert alert-danger" role="alert">Palun täitke mõlemad lahtrid!</div>
             </form>
-
+            <?php
+            if (isset($_GET['punktid']) && $_GET['punktid'] !== '') {
+                $punktid = $_GET['punktid'];
+                switch (true) {
+                    case ($punktid > 10):
+                        echo "SUPER!";
+                        break;
+                    case ($punktid >= 5 && $punktid <= 9):
+                        echo "TEHTUD!";
+                        break;
+                    case ($punktid < 5):
+                        echo "KASIN!";
+                        break;
+                    default:
+                        echo "SISESTA OMA PUNKTID!";
+                        break;
+                }
+            }
+            ?>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
