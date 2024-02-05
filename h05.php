@@ -10,6 +10,7 @@
 <body>
     <div class="container">
     <h1>Harjutused</h1>
+
     <?php
     /*See on kommentaar, mis on kirjutatud mitme rea kaupa
     h1.php
@@ -48,20 +49,95 @@
     "5GAER13D19J026924", "1G4HC5EM1BU329204", "3VWML7AJ6CM772736", "3C6TD4HT2CG011211", "JTDZN3EU2FJ023675", "JN8AZ1MU4CW041721", "KNAFX5A82F5991024", 
     "1N6AA0CJ1D57470", "WAUEG98E76A780908", "WAUAF78E96A920706", "1GT01XEG8FZ268942", "1FTEW1CW4AF371278", "JN1AZ4EH8DM531691", "WAUEKAFBXAN294295", 
     "1N6AA0EDXFN868772", "WBADW3C59DJ422810");
+    $palgad = array(1220,1213,1295,1312,1298,1354,1296,1286,1292,1327,1369,1455);
+    $firmad = array("Kimia","Mynte","Voomm","Twiyo","Layo","Talane","Gigashots","Tagchat","Quaxo","Voonyx","Kwilith","Edgepulse","Eidel","Eadel","Jaloo","Oyope","Jamia");
+    $riigid = array("Indonesia","Canada","Kyrgyzstan","Germany","Philippines","Philippines","Canada","Philippines","South Sudan","Brazil","Democratic Republic of the Congo","Indonesia","Syria","Sweden","Philippines","Russia","China","Japan","Brazil","Sweden","Mexico","France","Kazakhstan","Cuba","Portugal","Czech Republic" );
+    $hiina = array("瀚聪","月松","雨萌","展博","雪丽","哲恒","慧妍","博裕","宸瑜","奕漳","思宏","伟菘","彦歆","睿杰","尹智","琪煜","惠茜","晓晴","志宸","博豪","璟雯","崇杉","俊誉","军卿","辰华","娅楠","志宸","欣妍","明美");
+    $google = array("Feake","Bradwell","Dreger","Bloggett","Lambole","Daish","Lippiett","Blackie","Stollenbeck","Houseago","Dugall","Sprowson","Kitley","Mcenamin","Allchin","Doghartie","Brierly","Pirrone","Fairnie","Seal","Scoffins","Galer","Matevosian","DeBlase","Cubbin","Izzett","Ebi","Clohisey","Prater","Probart","Samwaye","Concannon","MacLure","Eliet","Kundt","Reyes");
+    $pildid = array("prentice.jpg","freeland.jpg","peterus.jpg","devlin.jpg","gabriel.jpg","pete.jpg");
+
+
     echo "Autode arv: " . count($autod) . "<br>" . "VIN koodide arv: " . count($vin) . "<br>";
     $filteredVin = array_filter($vin, function($vinNumber) {
         return strlen($vinNumber) < 17;
     });
+    foreach ($filteredVin as $fvin) {
+        echo "$fvin, ";
+    }
+    echo "<br>";
 
-    print_r($filteredVin);
+
     $filteredAutod = array_filter($autod, function($carBrand) {
         return $carBrand == 'Toyota' || $carBrand == 'Audi';
     });
+    foreach ($filteredAutod as $fauto) {
+        echo "$fauto, ";
+    }
+    echo "<br>";
+    $keskmine = array_sum($palgad) / count($palgad);
+    echo "$keskmine € on keskmine palk <br>";
+    foreach ($firmad as $firma) {
+        echo "$firma, ";
+    }
+    if (($key = array_search('Kimia', $firmad)) !== false) {
+        unset($firmad[$key]);
+    }
+    echo "<br>";
+    foreach ($firmad as $firma) {
+        echo "$firma, ";
+    }
+    $pikkriik = "";
+    foreach ($riigid as $riik) {
+        if (strlen($riik) > strlen($pikkriik)) {
+            $pikkriik = $riik;
+        }
+    }
 
-    print_r($filteredAutod);
+    echo "<br>";
+    sort($riigid);
+    echo "Pikim riik on '$pikkriik' <br>";
+
+    sort($hiina);
+    echo "Esimene hiina nimi on: $hiina[0] <br>";
+    echo "Viimane hiina nimi on: $hiina[28] <br>";
+
+    foreach ($google as $name) {
+        echo "$name, ";
+    }
     ?>
-    
+    <body>
+    <div class="container">
+        <form action="h05.php" method="post">
+            <div class="mb-3">
+                <div class="col">
+                <label for="searchName" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="searchName" name="searchName">
+            </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+    <div class="container">
+    </body>
+    <?php
+    $searchName = $_POST['searchName']; // Assuming the name to search is posted from a form
 
+    if (in_array($searchName, $google)) {
+        echo '<div class="alert alert-success" role="alert">' . $searchName . ' on listis.</div>';
+    } else {
+        echo '<div class="alert alert-danger" role="alert">' . $searchName . ' ei ole listis.</div>';
+    }
+
+    echo '<img src="/img/' . $pildid[2] . '" alt="Image">';
+
+    echo '<div class="row">';
+    foreach ($pildid as $pilt) {
+        echo '<div class="col"><img src="/img/' . $pilt . '" class="img-fluid w-100" alt="Image"></div>';
+    }
+    echo '</div>';
+    ?>
+
+</div>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
