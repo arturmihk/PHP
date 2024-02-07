@@ -15,12 +15,11 @@
     /*See on kommentaar, mis on kirjutatud mitme rea kaupa
     h1.php
     Artur-Mihk Peterson
-    29.01.2024
+    06.02.2024
 
 
     */
     $tudrukud = array('mari', 'kati', 'juuli', 'kristi', 'linda','kristina','anne', 'liisa');
-	//sorteerimine
 	sort($tudrukud);
     echo "Tüdrukud: $tudrukud[0], $tudrukud[1], $tudrukud[2], $tudrukud[3], $tudrukud[4], $tudrukud[5], $tudrukud[6], $tudrukud[7] <br>";
     echo "Kolm esimest tüdrukut: $tudrukud[0] $tudrukud[1] $tudrukud[2]<br>";
