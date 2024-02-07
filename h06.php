@@ -26,6 +26,43 @@
         }
         $arv++;
     }
+    $i = 1;
+    for($i = 0; $i < 10; $i++){
+        echo "*";
+    }
+    $i = 1;
+    for($i = 0; $i < 10; $i++){
+        echo "* <br>";
+    }
+    $i = 0;
+    for($i = 0; $i < 26; $i++){
+        echo " *  ";
+        if ($i % 5 == 0) {
+            echo "<br>";
+    }
+    }
+    $i = 10;
+    while($i >= 1){
+        echo "$i. ";
+        $i--;
+    }
+    echo "<br>";
+    $i = 1;
+    for(; $i <= 100; $i++){
+        if ($i % 3 == 0) {
+            echo "$i. ";
+        }
+    }
+    echo "<br>";
+
+    $tudrukud = array("Kati", "Mari", "Juuli", "Kristi", "Linda");
+    $poisid = array("Toomas", "Kalle", "Mihkel", "Jaan", "Peeter");
+
+    foreach ($poisid as $index => $poiss) {
+        if (isset($tudrukud[$index])) {
+            echo $poiss . " ja " . $tudrukud[$index] . "<br>";
+        }
+    }
     ?>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
