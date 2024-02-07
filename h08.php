@@ -9,6 +9,7 @@
 
 <body>
     <div class="container">
+
     <h1>Harjutused</h1>
     <?php
     /*See on kommentaar, mis on kirjutatud mitme rea kaupa
@@ -34,7 +35,22 @@
         $interval = date_diff($tana, $koolilopp);
         return $interval->format('%a');
     }
-
+    function aastaajapilt($kuu) {
+        if ($kuu >= 3 && $kuu <= 5) {
+            // kevad
+            echo '<img src="/img/kevad.jpg" alt="Kevad" class="img-fluid">';
+        } elseif ($kuu >= 6 && $kuu <= 8) {
+            // suvi
+            echo '<img src="/img/suvi.jpg" alt="Suvi" class="img-fluid"> ';
+        } elseif ($kuu >= 9 && $kuu <= 11) {
+            // sügis
+            echo '<img src="/img/sügis.jpg" alt="Sugis" class="img-fluid">';
+        } else {
+            // talv
+            echo '<img src="/img/talv.jpg" alt="Talv" class="img-fluid">';
+        }
+    }
+    
     date_default_timezone_set('Europe/Tallinn');
     echo date("d.m.Y H:i");
     echo "<br>";
@@ -56,6 +72,20 @@
     $paevad = Kooliaalopp(2025);
     echo "Kooli lõpuni on $paevad päeva";
     ?>
+    <body>
+    <form action="h08.php" method="get">
+                <h3>Kuu</h3>
+                Mitmes Kuu on: <input type="text" name="kuu" required pattern="-?\d*\.?\d+"><br>
+                <input type="submit" value="Arvuta">
+            </form>
+    </body>
+    <?php
+        if (isset($_GET['kuu']) && $_GET['kuu'] !== '') {
+            $kuu = $_GET['kuu'];
+            aastaajapilt($kuu);
+        }
+    ?>
+    </div>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
