@@ -38,16 +38,16 @@
     function aastaajapilt($kuu) {
         if ($kuu >= 3 && $kuu <= 5) {
             // kevad
-            echo '<img src="/img/kevad.jpg" alt="Kevad" class="img-fluid">';
+            echo '<img src="/php/img/kevad.jpg" alt="Kevad" class="img-fluid">';
         } elseif ($kuu >= 6 && $kuu <= 8) {
             // suvi
-            echo '<img src="/img/suvi.jpg" alt="Suvi" class="img-fluid"> ';
+            echo '<img src="/php/img/suvi.jpg" alt="Suvi" class="img-fluid"> ';
         } elseif ($kuu >= 9 && $kuu <= 11) {
             // sügis
-            echo '<img src="/img/sügis.jpg" alt="Sugis" class="img-fluid">';
+            echo '<img src="/php/img/sügis.jpg" alt="Sugis" class="img-fluid">';
         } else {
             // talv
-            echo '<img src="/img/talv.jpg" alt="Talv" class="img-fluid">';
+            echo '<img src="/php/img/talv.jpg" alt="Talv" class="img-fluid">';
         }
     }
     
@@ -69,7 +69,7 @@
     echo "Oled $vanus aastat vana";
     }
     echo "<br>";
-    $paevad = Kooliaalopp(2025);
+    $paevad = Kooliaalopp(2024);
     echo "Kooli lõpuni on $paevad päeva";
     ?>
     <body>

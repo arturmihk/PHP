@@ -20,12 +20,7 @@
 
     */
     $tudrukud = array('mari', 'kati', 'juuli', 'kristi', 'linda','kristina','anne', 'liisa');
-	sort($tudrukud);
-    echo "Tüdrukud: $tudrukud[0], $tudrukud[1], $tudrukud[2], $tudrukud[3], $tudrukud[4], $tudrukud[5], $tudrukud[6], $tudrukud[7] <br>";
-    echo "Kolm esimest tüdrukut: $tudrukud[0] $tudrukud[1] $tudrukud[2]<br>";
-    $randint = rand(0, 7);
-    echo $tudrukud[$randint];
-    echo "<br>";
+
     $autod = array("Subaru","BMW","Acura","Mercedes-Benz","Lexus","GMC","Volvo","Toyota","Volkswagen","Volkswagen","GMC","Jeep","Saab","Hyundai","Subaru","Mercedes-Benz",
     "Honda","Kia","Mercedes-Benz","Chevrolet","Chevrolet","Porsche","Buick","Dodge","GMC","Dodge","Nissan","Dodge","Jaguar","Ford","Honda","Toyota","Jeep",
     "Kia","Buick","Chevrolet","Subaru","Chevrolet","Chevrolet","Pontiac","Maybach","Chevrolet","Plymouth","Dodge","Nissan","Porsche","Nissan","Mercedes-Benz",
@@ -55,6 +50,12 @@
     $google = array("Feake","Bradwell","Dreger","Bloggett","Lambole","Daish","Lippiett","Blackie","Stollenbeck","Houseago","Dugall","Sprowson","Kitley","Mcenamin","Allchin","Doghartie","Brierly","Pirrone","Fairnie","Seal","Scoffins","Galer","Matevosian","DeBlase","Cubbin","Izzett","Ebi","Clohisey","Prater","Probart","Samwaye","Concannon","MacLure","Eliet","Kundt","Reyes");
     $pildid = array("prentice.jpg","freeland.jpg","peterus.jpg","devlin.jpg","gabriel.jpg","pete.jpg");
 
+    sort($tudrukud);
+    echo "Tüdrukud: $tudrukud[0], $tudrukud[1], $tudrukud[2], $tudrukud[3], $tudrukud[4], $tudrukud[5], $tudrukud[6], $tudrukud[7] <br>";
+    echo "Kolm esimest tüdrukut: $tudrukud[0] $tudrukud[1] $tudrukud[2]<br>";
+    $randint = rand(0, 7);
+    echo $tudrukud[$randint];
+    echo "<br>";
 
     echo "Autode arv: " . count($autod) . "<br>" . "VIN koodide arv: " . count($vin) . "<br>";
     $filteredVin = array_filter($vin, function($vinNumber) {
@@ -131,7 +132,7 @@
 
     echo '<div class="row">';
     foreach ($pildid as $pilt) {
-        echo '<div class="col"><img src="/img/' . $pilt . '" class="img-fluid w-100" alt="Image"></div>';
+        echo '<div class="col"><img src="/php/img/' . $pilt . '" class="img-fluid w-100" alt="Image"></div>';
     }
     echo '</div>';
     ?>
