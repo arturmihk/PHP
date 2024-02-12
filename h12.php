@@ -10,7 +10,7 @@
 <body>
     <div class="container">
     <h1>Harjutused</h1>
-    <form action="h11.php" method="get">
+    <form action="h12.php" method="get">
                 <h3>Sõiduaeg</h3>
                 Lisa alguse aeg <input type="time" name="algus"><br>
                 Lisa lõpu aeg <input type="time" name="lopp"><br>
@@ -46,6 +46,8 @@
     } else {
         echo "Palun lisa mõlemad algus ja lõpp aeg.";
     }
+    echo "<br>";
+    $allikas = 'tootajad.csv'
     ?>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
