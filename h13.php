@@ -21,6 +21,13 @@
     <div class="container">
     <h1>Harjutused</h1>
     <?php
+	    /*See on kommentaar, mis on kirjutatud mitme rea kaupa
+    h1.php
+    Artur-Mihk Peterson
+    14.02.2024
+
+
+    */
     // Check if a file is uploaded
     if(!empty($_FILES['minu_fail']['name'])){
         $sinu_faili_nimi = $_FILES['minu_fail']['name'];

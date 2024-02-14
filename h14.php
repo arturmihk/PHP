@@ -11,9 +11,16 @@
     <div class="container">
     <h1>Harjutused</h1>
     <?php
-    $kataloog = 'failid'; // Define the directory at the top of your PHP code
+    /*See on kommentaar, mis on kirjutatud mitme rea kaupa
+    h1.php
+    Artur-Mihk Peterson
+    14.02.2024
 
-    // Check if a file is uploaded
+
+    */
+    $kataloog = 'failid'; 
+
+
     if(!empty($_FILES['minu_fail']['name'])){
         $sinu_faili_nimi = $_FILES['minu_fail']['name'];
         $ajutine_fail= $_FILES['minu_fail']['tmp_name'];
@@ -22,7 +29,7 @@
         
         $faili_tyyp = $_FILES['minu_fail']['type'];
         if ($faili_tyyp=='image/jpg' || $faili_tyyp=='image/jpeg'){
-            $faili_koht = $kataloog.'/'.$sinu_faili_nimi;    //kontrollitava faili asukoht ja nimi
+            $faili_koht = $kataloog.'/'.$sinu_faili_nimi; 
             
             if(!file_exists($faili_koht) && move_uploaded_file($ajutine_fail, $kataloog.'/'.$sinu_faili_nimi)){
                 echo 'Faili üleslaadimine oli edukas <br>';    
@@ -34,9 +41,9 @@
         }
     }
 
-    // Display uploaded images in columns
-    $files = array_diff(scandir($kataloog), array('.', '..')); // remove '.' and '..' from the array
-    $columnCount = 3; // change this to change the number of columns
+   
+    $files = array_diff(scandir($kataloog), array('.', '..')); 
+    $columnCount = 3;
     echo "<div class='row'>";
     foreach($files as $file) {
         if($file !== "." && $file !== "..") {
@@ -48,7 +55,6 @@
     echo "</div>";
     ?>
 
-    <!-- HTML form for uploading the image -->
     <form action="" method="POST" enctype="multipart/form-data">
         <input type="file" name="minu_fail" accept=".jpg" />
         <input type="submit" value="Upload" />

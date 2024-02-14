@@ -9,34 +9,43 @@
 
 <body>
     <div class="container">
-    <h1>Harjutused</h1>
-    <menu>
-        <a href="h10.php">Avaleht</a> |
-        <a href="h10.php?leht=portfoolio">Portfoolio</a> |
-        <a href="h10.php?leht=kaart">Kaart</a> |
-        <a href="h10.php?leht=kontakt">Kontakt</a>
-    </menu>
+    <h1>Iseseisev asi</h1>
     <?php
     /*See on kommentaar, mis on kirjutatud mitme rea kaupa
     h1.php
     Artur-Mihk Peterson
-    08.02.2024
+    14.02.2024
 
 
     */
-    if(!empty($_GET['leht'])){
-        $leht = htmlspecialchars($_GET['leht']);
-        $lubatud = array('portfoolio','kaart','kontakt');
-        $kontroll = in_array($leht, $lubatud);
-        if($kontroll==true){
-            include($leht.'.php');
-        } else {
-            echo "<br>";
-            echo 'Valitud lehte ei eksisteeri millegipärast, äkki panite VALE AADRESSI VÕI MIDAGI???';
-        }
+    echo "<h3>Lihtne tekst</h3>";
+    echo '<br>Juhan Liiv, "Ääremärkused"';
+    echo "<h3><br>Intress</h3>";
+    $raha = 2000; 
+    $intresss = 0.02;
+    $n = 1;
+    $aasta = 5;
+    
+    $kokku = $raha * pow((1 + $intresss/$n), $n*$aasta);
+    
+    echo "Viie aasta pärast on: " . $kokku . "€";
+    echo "<h3><br>Loend</h3>";
+    $number = 10;
+
+    while ($number >= 1) {
+        echo $number . "<br>";
+        $number--;
+    }
+    echo "<h3><br>Jooksuajad</h3>";
+    $nimed = array("Jüri", "Mari", "Kati", "Mati", "Juuli", "Maali");
+    $ajad = array(11.5, 10.7, 9.5, 11.7, 10.2, 9.4);
+
+    array_multisort($ajad, $nimed);
+
+    for ($i = 0; $i < 3; $i++) {
+    echo ($i+1) . ". Koht: " . $nimed[$i] . " Ajaga " . $ajad[$i] . "<br>";
     }
     ?>
-
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
