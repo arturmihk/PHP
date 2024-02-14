@@ -47,7 +47,51 @@
         echo "Palun lisa mõlemad algus ja lõpp aeg.";
     }
     echo "<br>";
-    $allikas = 'tootajad.csv'
+
+    $failinimi = 'tootajad.csv';
+    
+
+    $andmed = [];
+    if (($csv = fopen($failinimi, "r")) !== FALSE) {
+        while (($rida = fgetcsv($csv, 1000, ",")) !== FALSE) {
+            $andmed[] = $rida;
+        }
+        fclose($csv);
+    }
+    $meeste_palga_summa = 0;
+    $naiste_palga_summa = 0;
+    $meeste_arv = 0;
+    $naiste_arv = 0;
+    $maks_meeste_palk = 0;
+    $maks_naiste_palk = 0;
+    
+    foreach ($andmed as $tootaja) {
+        // Check if array keys exist before accessing them
+        if (isset($tootaja[1]) && isset($tootaja[2])) {
+            $palk = floatval($tootaja[2]);
+            if ($tootaja[1] == 'm') {
+                $meeste_palga_summa += $palk;
+                $meeste_arv++;
+                if ($palk > $maks_meeste_palk) {
+                    $maks_meeste_palk = $palk;
+                }
+            } elseif ($tootaja[1] == 'n') {
+                $naiste_palga_summa += $palk;
+                $naiste_arv++;
+                if ($palk > $maks_naiste_palk) {
+                    $maks_naiste_palk = $palk;
+                }
+            }
+        }
+    }
+$meeste_keskmine_palk = $meeste_arv > 0 ? $meeste_palga_summa / $meeste_arv : 0;
+$naiste_keskmine_palk = $naiste_arv > 0 ? $naiste_palga_summa / $naiste_arv : 0;
+
+// Väljastame analüüsi tulemused
+echo "Meeste keskmine palk: $meeste_keskmine_palk\n";
+echo "Naiste keskmine palk: $naiste_keskmine_palk\n";
+echo "Suurim meeste palk: $maks_meeste_palk\n";
+echo "Suurim naiste palk: $maks_naiste_palk\n";
     ?>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
