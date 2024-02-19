@@ -28,14 +28,13 @@
 
 
     */
-    // Check if a file is uploaded
     if(!empty($_FILES['minu_fail']['name'])){
         $sinu_faili_nimi = $_FILES['minu_fail']['name'];
         $ajutine_fail= $_FILES['minu_fail']['tmp_name'];
         
-        $faili_suurus = $_FILES['minu_fail']['size'];
-        
         $faili_tyyp = $_FILES['minu_fail']['type'];
+        
+        var_dump($_FILES['minu_fail']);
         if ($faili_tyyp=='image/jpg' || $faili_tyyp=='image/jpeg'){
             $kataloog = 'failid';
             $faili_koht = $kataloog.'/'.$sinu_faili_nimi;    //kontrollitava faili asukoht ja nimi
@@ -44,12 +43,14 @@
                 echo 'Faili üleslaadimine oli edukas <br>';    
             } else {
                 echo 'Faili üleslaadimine ebaõnnestus <br>';
+
+                var_dump(error_get_last());
             }
         } else {
             echo 'Faili ei laetud üles!';    
         }
     }
-
+    $kataloog = 'failid';
     // Display uploaded images
     echo "<div class='image-row'>";
     $files = scandir($kataloog);
