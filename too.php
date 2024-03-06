@@ -11,6 +11,11 @@
             background-image: url('https://multimedia.andalucia.org/media/C1DF41C3E6EF456A8B4A9B4845C32593/img/7B2A371526454055A71AC38C335E1834/16-20_Puente_Romano_y_Mezquita_de_Cordoba_Cordoba.jpg?responsive');
             color: #fff;
             text-align: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+
         }
         .bi {
             font-size: 2rem;
@@ -32,16 +37,16 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link text-white fw-bold" href="too.php">Avaleht</a>
+                                <a class="nav-link text-white fw-bold" href="too.php?leht=avaleht">Avaleht</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link text-white fw-bold" href="minust.php">Minust</a>
+                                <a class="nav-link text-white fw-bold" href="too.php?leht=minust">Minust</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white fw-bold" href="kontakt.php">Kontakt</a>
+                                <a class="nav-link text-white fw-bold" href="too.php?leht=kontakt">Kontakt</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white fw-bold" href="Admin.php">Admin</a>
+                                <a class="nav-link text-white fw-bold" href="too.php?leht=admin">Admin</a>
                             </li>
                         </ul>
                     </div>
@@ -54,51 +59,19 @@
             </div>
             <br>
         </div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-3 mt-4">
-                    <div class="blog-post">
-                        <h2>Postituse Pealkiri 1</h2>
-                        <p>Postituse sisu siia. See on esimene blogi postitus.</p>
-                    </div>
-                    <hr class="border-2 border-top" />
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-3">
-                    <div class="blog-post">
-                        <h2>Postituse Pealkiri 2</h2>
-                        <p>Postituse sisu siia. See on teine blogi postitus.</p>
-                    </div>
-                    <hr class="border-2 border-top" />
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-3">
-                    <div class="blog-post">
-                        <h2>Postituse Pealkiri 3</h2>
-                        <p>Postituse sisu siia. See on kolmas blogi postitus.</p>
-                    </div>
-                    <hr class="border-2 border-top" />
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-3">
-                    <div class="blog-post">
-                        <h2>Postituse Pealkiri 4</h2>
-                        <p>Postituse sisu siia. See on neljas blogi postitus.</p>
-                    </div>
-                    <hr class="border-2 border-top" />
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-3">
-                    <div class="older-posts-btn">
-                        <button class="btn btn-primary ms-auto">Näita vanemaid postitusi</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php
+    if(!empty($_GET['leht'])){
+        $leht = htmlspecialchars($_GET['leht']);
+        $lubatud = array('avaleht','admin','minust','kontakt');
+        $kontroll = in_array($leht, $lubatud);
+        if($kontroll==true){
+            include($leht.'.php');
+        } else {
+            echo "<br>";
+            echo 'Valitud lehte ei eksisteeri millegipärast, äkki panite VALE AADRESSI VÕI MIDAGI???';
+        }
+    }
+    ?>
         <hr class="border-2 border-top" />
         <footer class="container">
         <div class="row justify-content-center">

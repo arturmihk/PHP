@@ -56,7 +56,7 @@ bgte
                 <a href="iseseisev.php">iseseisev</a>
             </li>
             <li class="list-group-item  bg-success p-3">
-                <a href="too.php">too</a>
+                <a href="too.php?leht=avaleht">too</a>
             </li>
         </ul>
     </div>
