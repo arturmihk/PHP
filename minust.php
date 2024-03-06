@@ -20,8 +20,7 @@
     </style>
 </head>  
 <body>
-
-    <div class="container-fluid p-0">
+<div class="container-fluid p-0">
         <div class="jumbotron jumbo mb-0">
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
@@ -49,56 +48,19 @@
             </nav>
             <br>
             <div class="container">
-                <h1 class="display-4 fw-bold">Praktika Hispaanias</h1>
-                <p class="lead mb-5 fw-bold">Minu välispraktika HKHKs</p>    
+                <h1 class="display-4 fw-bold">Minust</h1>
+                <p class="lead mb-5 fw-bold">Minu asi ma ei tea</p>    
             </div>
             <br>
         </div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-3 mt-4">
+        <div class="row justify-content-center">
+                <div class="col-md-3">
                     <div class="blog-post">
-                        <h2>Postituse Pealkiri 1</h2>
-                        <p>Postituse sisu siia. See on esimene blogi postitus.</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit nisi quam eveniet recusandae ducimus atque provident earum. Dolorem, harum aspernatur sunt perspiciatis sapiente enim tempora culpa praesentium. Neque, ad sit!</p>
                     </div>
                     <hr class="border-2 border-top" />
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-3">
-                    <div class="blog-post">
-                        <h2>Postituse Pealkiri 2</h2>
-                        <p>Postituse sisu siia. See on teine blogi postitus.</p>
-                    </div>
-                    <hr class="border-2 border-top" />
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-3">
-                    <div class="blog-post">
-                        <h2>Postituse Pealkiri 3</h2>
-                        <p>Postituse sisu siia. See on kolmas blogi postitus.</p>
-                    </div>
-                    <hr class="border-2 border-top" />
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-3">
-                    <div class="blog-post">
-                        <h2>Postituse Pealkiri 4</h2>
-                        <p>Postituse sisu siia. See on neljas blogi postitus.</p>
-                    </div>
-                    <hr class="border-2 border-top" />
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-3">
-                    <div class="older-posts-btn">
-                        <button class="btn btn-primary ms-auto">Näita vanemaid postitusi</button>
-                    </div>
-                </div>
-            </div>
-        </div>
         <hr class="border-2 border-top" />
         <footer class="container">
         <div class="row justify-content-center">
